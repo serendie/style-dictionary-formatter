@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify",
-    "release": "release-it --config ../.release-it.json"
+    "release": "release-it"
   },
   "peerDependencies": {
     "style-dictionary": "^3.9.2",
