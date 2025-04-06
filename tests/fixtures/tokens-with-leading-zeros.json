@@ -1,0 +1,10 @@
+{
+  "sd": {
+    "dimension": {
+      "scale": {
+        "05": { "value": "0.5rem", "type": "dimension" },
+        "10": { "value": "1rem", "type": "dimension" }
+      }
+    }
+  }
+}
