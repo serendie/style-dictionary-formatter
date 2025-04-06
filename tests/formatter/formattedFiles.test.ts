@@ -1,8 +1,7 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeAll, beforeEach } from "vitest";
 import StyleDictionary from "style-dictionary";
 import fs from "fs";
 import path from "path";
-import { pandaToken } from "../../src/formatter/pandaToken";
 import { customFileHeader, registerAll } from "../../src/index";
 
 const files = [
@@ -20,16 +19,12 @@ const files = [
   },
 ];
 
-describe("pandaToken", () => {
-  // 各テスト前に必要な登録を行う
-  beforeEach(() => {
-    // 登録済みのフォーマットをクリア
-    StyleDictionary.format = {};
-    // フォーマッターを登録
-    StyleDictionary.registerFormat(pandaToken);
-    // 必要な登録を行う
+describe("formattedFiles", () => {
+  beforeAll(() => {
     registerAll();
-    // dist内のファイルを削除
+  });
+
+  beforeEach(() => {
     fs.rmSync("dist", { recursive: true, force: true });
   });
 
