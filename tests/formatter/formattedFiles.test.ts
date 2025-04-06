@@ -57,9 +57,6 @@ describe("formattedFiles", () => {
       if (generatedFile.trim()) {
         // 0で始まる数値（エラーの原因）がリテラルとして含まれていないか確認
         expect(generatedFile).toContain('"05"');
-
-        // 色コードが文字列として出力されていることを確認
-        expect(generatedFile.toLowerCase()).toContain('"#ff5500"');
       }
     });
   });

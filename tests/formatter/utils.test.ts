@@ -1,6 +1,5 @@
-import StyleDictionary from "style-dictionary";
 import { describe, it, expect } from "vitest";
-const { getTypeScriptType } = StyleDictionary.formatHelpers;
+import { getTypeScriptType } from "../../src/utils/getTypeScriptType";
 
 describe("getTypeScriptType", () => {
   it("通常の数値を正しく処理する", () => {
