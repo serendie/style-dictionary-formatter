@@ -1,12 +1,14 @@
 {
   "name": "@serendie/style-dictionary-formatter",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "the style-dictionary formatter of Serendie Design System",
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify",
-    "release": "release-it"
+    "release": "release-it",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "peerDependencies": {
     "style-dictionary": "^3.9.2",
@@ -18,7 +20,8 @@
     "style-dictionary": "^3.9.2",
     "style-dictionary-utils": "^2.0.7",
     "tsup": "^8.3.5",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vitest": "^1.3.1"
   },
   "exports": {
     ".": {

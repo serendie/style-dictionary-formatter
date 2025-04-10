@@ -1,0 +1,10 @@
+{
+  "sd": {
+    "reference": {
+      "color": {
+        "primary": { "$value": "#FF5500", "$type": "color" },
+        "secondary": { "$value": "#00FF00", "$type": "color" }
+      }
+    }
+  }
+}

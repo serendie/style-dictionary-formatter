@@ -1,8 +1,9 @@
 import StyleDictionary from "style-dictionary-utils";
 import { path2Token, valueTypeConverter } from "./utils";
 import { Token } from "../types";
+import { getTypeScriptType } from "../utils/getTypeScriptType";
 
-const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
+const { fileHeader } = StyleDictionary.formatHelpers;
 
 export const pandaToken: StyleDictionary.Format = {
   name: "serendie/pandaToken",
