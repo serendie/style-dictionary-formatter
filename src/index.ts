@@ -1,4 +1,3 @@
-import StyleDictionary from "style-dictionary";
 import { cssWithTheme } from "./formatter/cssWithTheme";
 import { jsModule, jsModuleDeclarations } from "./formatter/jsModule";
 import { pandaToken, pandaTokenDeclarations } from "./formatter/pandaToken";
@@ -9,28 +8,29 @@ import { cssTypography } from "./transformer/cssTypography";
 import { robotoToInherit } from "./transformer/robotoToInherit";
 export { customFileHeader } from "./customFileHeader";
 
-export function registerFormatter() {
-  StyleDictionary.registerFormat(cssWithTheme);
-  StyleDictionary.registerFormat(jsModule);
-  StyleDictionary.registerFormat(jsModuleDeclarations);
-  StyleDictionary.registerFormat(pandaToken);
-  StyleDictionary.registerFormat(pandaTokenDeclarations);
-  StyleDictionary.registerFormat(tokenList);
-  StyleDictionary.registerFormat(tokenListDeclarations);
+// プロジェクト側のStyleDictionaryを受け取って登録する
+export function registerTransformer(sd = require("style-dictionary")) {
+  sd.registerTransform(cssShadow);
+  sd.registerTransform(cssTypography);
+  sd.registerTransform(robotoToInherit);
 }
 
-export function registerParser() {
-  StyleDictionary.registerParser(filenameToTheme);
+export function registerFormatter(sd = require("style-dictionary")) {
+  sd.registerFormat(cssWithTheme);
+  sd.registerFormat(jsModule);
+  sd.registerFormat(jsModuleDeclarations);
+  sd.registerFormat(pandaToken);
+  sd.registerFormat(pandaTokenDeclarations);
+  sd.registerFormat(tokenList);
+  sd.registerFormat(tokenListDeclarations);
 }
 
-export function registerTransformer() {
-  StyleDictionary.registerTransform(cssShadow);
-  StyleDictionary.registerTransform(cssTypography);
-  StyleDictionary.registerTransform(robotoToInherit);
+export function registerParser(sd = require("style-dictionary")) {
+  sd.registerParser(filenameToTheme);
 }
 
-export function registerAll() {
-  registerFormatter();
-  registerParser();
-  registerTransformer();
+export function registerAll(sd = require("style-dictionary")) {
+  registerFormatter(sd);
+  registerParser(sd);
+  registerTransformer(sd);
 }
