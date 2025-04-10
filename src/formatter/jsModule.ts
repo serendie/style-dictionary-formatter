@@ -1,8 +1,9 @@
 import StyleDictionary from "style-dictionary";
 import { path2Token } from "./utils";
 import { Token } from "../types";
+import { getTypeScriptType } from "../utils/getTypeScriptType";
 
-const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
+const { fileHeader } = StyleDictionary.formatHelpers;
 
 export const jsModule: StyleDictionary.Format = {
   name: "serendie/jsModule",

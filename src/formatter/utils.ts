@@ -1,3 +1,5 @@
+import { Token } from "../types";
+
 /*
  * パスをトークンに変換します。
  * @param token - トークン
