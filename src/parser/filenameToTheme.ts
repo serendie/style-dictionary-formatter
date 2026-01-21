@@ -12,7 +12,7 @@ export const filenameToTheme: StyleDictionary.Parser = {
   parse: ({ filePath, contents }) => {
     const obj = w3cTokenJsonParser.parse({ contents });
 
-    const match = filePath.match(/\.(\w+).json$/);
+    const match = filePath.match(/\.([a-zA-Z0-9_-]+)\.json$/);
     if (match) {
       // filePathにcolorが含まれている場合
       // これらはカラーテーマとして扱う
