@@ -18,4 +18,15 @@ describe("getTypeScriptType", () => {
       `{ "01": { value: number }, "02": { value: number } }`
     );
   });
+
+  it("ハイフン付きキーをクオートする", () => {
+    const input = {
+      konjo: { value: "string" },
+      "konjo-dark": { value: "string" },
+    };
+    const output = getTypeScriptType(input);
+    expect(output).toEqual(
+      `{ konjo: { value: string }, "konjo-dark": { value: string } }`
+    );
+  });
 });
