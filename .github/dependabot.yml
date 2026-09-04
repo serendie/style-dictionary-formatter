@@ -1,6 +1,6 @@
 version: 2
 updates:
-  # セキュリティ更新用。target-branch を持たないこのエントリだけがセキュリティ更新に使われる
+  # セキュリティ更新用。バージョン更新は止め、重大度の絞り込みは組織の Dependabot rules で行う
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
