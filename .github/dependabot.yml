@@ -1,10 +1,14 @@
 version: 2
 updates:
+  # セキュリティ更新用。バージョン更新は止め、重大度の絞り込みは組織の Dependabot rules で行う
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-    cooldown:
-      default-days: 7
-    allow:
-      - dependency-name: "@serendie/*"
+      interval: "weekly"
+    # バージョン更新を停止する（セキュリティ更新はこの上限の対象外）
+    open-pull-requests-limit: 0
+    groups:
+      npm-security:
+        applies-to: "security-updates"
+        patterns:
+          - "*"
